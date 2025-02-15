@@ -1,26 +1,26 @@
-Blacker Jack Card Counter
+#Blacker Jack Card Counter
 
 Blacker Jack is a card counting app that will display the top 3 card counting methods. It will allow you to type in cards as they are being played, to get an idea of what your True Count would be for Omega Halves, Wong, and Hi-Lo counting methods. There is also a graphical representation of the Hi-Lo count as it progresses through your game, as well as a chart that displays the running total of each card value remaining in the deck(s).
 
 Note: The selector for counting methods is useless now and will be removed shortly.
-Motivation
+#Motivation
 
 I have been interested in card counting and wanted an exercise to familiarize myself with counting techniques and strategies. This project has been the motivation for me to keep learning and testing new strategies while also playing games and having fun!
-Coming Soon:
+#Coming Soon:
 
 Will add a section for bet spread.
 
 Will remove useless counting method selector.
 
-Add history to show previously entered card values.
+~~Add history to show previously entered card values.~~
 
-Add audible alert when no input was given.
+~~Add audible alert when no input was given.~~
 
-Add input validation.
+~~Add input validation.~~
 
-Discard anything invalid while also allowing input without spaces or any delimiter.
+~~Discard anything invalid while also allowing input without spaces or any delimiter.~~
 
-Add counting methods so we can see multiple counts at the same time.
+~~Add counting methods so we can see multiple counts at the same time.~~
 Built With
 
     Python 3
