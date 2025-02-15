@@ -31,7 +31,7 @@ Installation
 
 Simply download and run the executable "Blackjack Card Counter.exe"
 Usage
-![Sample GUI](https://github.com/aljamima/BlackerJack/blob/main/%7BF9BFCB43-FFB5-4A6C-BAB7-E94CE0160D05%7D.png?raw=true)
+![Sample GUI](https://github.com/aljamima/BlackerJack/blob/main/screenshot.png?raw=true)
 
 To use this app, you will select the number of decks you are playing with. Then just type in the card values as they are dealt. You do NOT need to enter the suit, as this doesn't really affect the count at all. Any invalid inputs will be discarded. You can enter card values for high cards in upper or lower case. You can separate by spaces or commas if you choose, but no delimiter is actually required. Anytime the cards are reshuffled, just hit the shuffle button to start over.
 
