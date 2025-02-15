@@ -18,7 +18,9 @@ Will remove useless counting method selector.
 
 ~~Add input validation.~~
 
-~~Discard anything invalid while also allowing input without spaces or any delimiter.~~
+~~Discard anything invalid.~~
+
+~~Allowing input without spaces or any delimiter.~~
 
 ~~Add counting methods so we can see multiple counts at the same time.~~
 Built With
