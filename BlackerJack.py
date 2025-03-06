@@ -199,8 +199,7 @@ class Ui_MainWindow(object):
     
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-
+        MainWindow.setWindowTitle(QCoreApplication.translate("Blacker Jacker - Card Counter", u"Blacker Jacker - Card Counter", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Number of Decks", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Card Values (2-10, J-A)", None))
         self.shuffled.setText(QCoreApplication.translate("MainWindow", u"Shuffled", None))
@@ -254,7 +253,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.deckCount.valueChanged.connect(self.reset)
         self.shuffled.clicked.connect(self.reset)
 
-        self.valid_cards_pattern = r"(10|[2-9]|A|K|Q|J)"
+        self.valid_cards_pattern = r"(10|[2-9]|A|K|Q|J|T)"
 
         self.textInput.setFocus()
 
@@ -263,11 +262,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         input_text = self.textInput.text().upper().strip()
         formattedInputList = re.findall(self.valid_cards_pattern, input_text)
 
-
         #this part probably isnt necessary
         if not formattedInputList:
             print("No valid card values found.")
-            self.play_sound("no_input.wav")
+            #self.play_sound("no_input.wav")
         else:
             # Group valid inputs into lines of 4 items each
             grouped_input = [" ".join(formattedInputList[i:i+4]) for i in range(0, len(formattedInputList), 4)]
@@ -301,10 +299,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             inputText = self.textInput.text().upper()
             if not inputText:
                 print('Thats NOT Valid Input, Dude!')
-                self.play_sound("no_input.wav")
+                #self.play_sound("no_input.wav")
                 return
-
-            #valid_cards_pattern = r"(10|[2-9]|A|K|Q|J)"
 
             inputFormattedText = inputText.replace(",", " ")
             inputCardValueList = re.split(r"\s+", inputFormattedText)
@@ -317,7 +313,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             #this part probably isnt necessary
             if not formattedCardValueList:
                 print("No valid card values found.")
-                self.play_sound("no_input.wav")
+                #self.play_sound("no_input.wav")
 
             # Decrement from self.individualCardCount
             for value in formattedCardValueList:
