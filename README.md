@@ -12,6 +12,12 @@ Will add a section for bet spread.
 
 Will remove useless counting method selector.
 
+Fix bug where long entries of >4 or 5 chars does not wrap inside card history box.
+
+Fix allowing "T" -or- 10 for 10's.
+
+Fix bug where text is not ALWAYS cleared on invalid input. 
+
 ~~Add history to show previously entered card values.~~
 
 ~~Add audible alert when no input was given.~~
