@@ -19,21 +19,24 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import pygame
 from PyQt6.QtCore import QStringListModel
 
+## pip install matplotlib PyQt6 pygame
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
+            MainWindow.setObjectName(u"Blacker Jacker - Card Counter")
         MainWindow.resize(520, 500)
 
+        """
         self.centralwidgetaroni = QWidget(MainWindow)
         self.centralwidgetaroni.setObjectName(u"centralwidgetaroni")
         self.centralwidgetaroni.setMaximumSize(QSize(16777215, 16777215))
+        """
 
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.deckCount = QtWidgets.QSpinBox(self.centralwidget)
+        #self.deckCount = QtWidgets.QSpinBox(self.centralwidget)
 
         self.deckCount = QSpinBox(self.centralwidget)
         self.deckCount.setObjectName(u"deckCount")
@@ -91,11 +94,15 @@ class Ui_MainWindow(object):
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QtCore.QRect(30, 90, 131, 16))
         self.label_4.setFont(font)
+
+
         self.countingSystem = QtWidgets.QComboBox(self.centralwidget)
         self.countingSystem.addItem("")
         self.countingSystem.addItem("")
         self.countingSystem.addItem("")
         self.countingSystem.setObjectName(u"countingSystem")
+
+        
         self.countingSystem.setGeometry(QtCore.QRect(30, 110, 131, 31))
         self.countingSystem.setFont(font)
         self.frame = QtWidgets.QFrame(self.centralwidget)
