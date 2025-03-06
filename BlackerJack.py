@@ -19,8 +19,6 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import pygame
 from PyQt6.QtCore import QStringListModel
 
-## pip install matplotlib PyQt6 pygame
-
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -67,7 +65,7 @@ class Ui_MainWindow(object):
         #self.label_2.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
         
         
-        self.label_2.setWordWrap(False)
+        self.label_2.setWordWrap(True)
         self.shuffled = QtWidgets.QPushButton(self.centralwidget)
         self.shuffled.setObjectName(u"shuffled")
         self.shuffled.setGeometry(QtCore.QRect(20, 220, 151, 31))
@@ -197,7 +195,6 @@ class Ui_MainWindow(object):
 
         QMetaObject.connectSlotsByName(MainWindow)
     
-
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("Blacker Jacker - Card Counter", u"Blacker Jacker - Card Counter", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Number of Decks", None))
@@ -214,12 +211,8 @@ class Ui_MainWindow(object):
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Omega II", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Previous:", None))
 
-
-
-cardValues = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
+cardValues = ["2","3","4","5","6","7","8","9","10","T","J","Q","K","A"]
 groupedCardValues = ["2","3","4","5","6","7","8","9","10 - K","A"]
-
-
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -283,7 +276,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.list_model.setStringList(self.list_items)  # Update the model
             """
 
-
     def play_sound(self, file_path):
         pygame.mixer.init()
         pygame.mixer.music.load(file_path)
@@ -292,7 +284,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # Wait until the sound finishes playing
         while pygame.mixer.music.get_busy():
             pygame.time.Clock().tick(10)
-
 
     def inputCardValues(self, event):
         if event.key() == Qt.Key.Key_Return:
@@ -324,7 +315,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 # Hi-Lo
                 if value in ["2","3","4","5","6"]:
                     self.hiloCount += 1
-                elif value in ["10","J","Q","K","A"]:
+                elif value in ["10","T","J","Q","K","A"]:
                     self.hiloCount -= 1
 
                 # Omega II
@@ -334,7 +325,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     self.omegaCount += 2
                 elif value == "9":
                     self.omegaCount -= 1
-                elif value in ["10","J","Q","K"]:
+                elif value in ["10","T","J","Q","K"]:
                     self.omegaCount -= 2
 
                 # Wong Halves
@@ -346,7 +337,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     self.wongCount += 1.5
                 elif value == "9":
                     self.wongCount -= 0.5
-                elif value in ["10","J","Q","K","A"]:
+                elif value in ["10","T","J","Q","K","A"]:
                     self.wongCount -= 1
 
             # Update the number of cards gone
@@ -377,7 +368,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         for value in formattedCardValueList:
             if value in ["2","3","4","5","6"]:
                 runningCount += 1
-            elif value in ["10","J","Q","K","A"]:
+            elif value in ["10","T","J","Q","K","A"]:
                 runningCount -= 1
             cardCount += 1
         self.textInput.setText("")
@@ -393,7 +384,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 runningCount += 2
             elif value in ["9"]:
                 runningCount -= 1
-            elif value in ["10","J","Q","K"]:
+            elif value in ["10","T","J","Q","K"]:
                 runningCount -= 2
             cardCount += 1
         self.textInput.setText("")
@@ -411,7 +402,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 runningCount += 1.5
             elif value in ["9"]:
                 runningCount -= 0.5
-            elif value in ["10","J","Q","K","A"]:
+            elif value in ["10","T","J","Q","K","A"]:
                 runningCount -= 1
             cardCount += 1
         self.textInput.setText("")
@@ -463,7 +454,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                                 self.individualCardCount["7"],
                                 self.individualCardCount["8"],
                                 self.individualCardCount["9"],
-                                self.individualCardCount["10"] + self.individualCardCount["J"] + self.individualCardCount["Q"] + self.individualCardCount["K"],
+                                self.individualCardCount["10"] + self.individualCardCount["T"] + self.individualCardCount["J"] + self.individualCardCount["Q"] + self.individualCardCount["K"],
                                 self.individualCardCount["A"] ]
         remainingCardProbabilities = [ count / self.remainingCardCount for count in groupedCardCountList]
         self.remainingCardBar.remove()
