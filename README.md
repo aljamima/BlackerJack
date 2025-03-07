@@ -20,6 +20,8 @@ Fix allowing "T" -or- 10 for 10's.
 
 Fix bug where text is not ALWAYS cleared on invalid input. 
 
+Remove count method selector.
+
 ~~Add history to show previously entered card values.~~
 
 ~~Add audible alert when no input was given.~~
