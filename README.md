@@ -31,11 +31,16 @@ Fix bug where text is not ALWAYS cleared on invalid input.
 ~~Allowing input without spaces or any delimiter.~~
 
 ~~Add counting methods so we can see multiple counts at the same time.~~
-Built With
 
+
+##Built With:
     Python 3
     PyQt6
     Qt Designer
+
+*install deps:*
+    pip install PyQt6 matplotlib pygame
+    (pygame dep will likely be removed soon.)
 
 ## Installation
 
