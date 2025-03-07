@@ -16,11 +16,9 @@ Will remove useless counting method selector.
 
 Fix bug where long entries of >4 or 5 chars does not wrap inside card history box.
 
-Fix allowing "T" -or- 10 for 10's.
+~~Fix allowing "T" -or- 10 for 10's.~~
 
 Fix bug where text is not ALWAYS cleared on invalid input. 
-
-Remove count method selector.
 
 ~~Add history to show previously entered card values.~~
 
